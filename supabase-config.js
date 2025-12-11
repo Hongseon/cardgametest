@@ -1,6 +1,8 @@
 // Supabase 설정
-const SUPABASE_URL = 'https://lyqeolfdnnpcfgrfsrvv.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5cWVvbGZkbm5wY2ZncmZzcnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzNTA2NTYsImV4cCI6MjA4MDkyNjY1Nn0.8lDz3y01TlN3AKle9ZL1eIxaskjtoJkVQXgGpVOJyao';
+// window.SUPABASE_CONFIG 객체에서 설정을 읽어옵니다
+// config.js 파일 또는 HTML의 script 태그에서 설정됩니다
+const SUPABASE_URL = (typeof window !== 'undefined' && window.SUPABASE_CONFIG?.url) || '';
+const SUPABASE_ANON_KEY = (typeof window !== 'undefined' && window.SUPABASE_CONFIG?.anonKey) || '';
 
 // Supabase 클라이언트 초기화
 let supabaseClient = null;

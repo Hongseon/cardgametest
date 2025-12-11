@@ -45,13 +45,24 @@ CREATE POLICY "Anyone can insert scores" ON scores
 
 ### 2. Supabase 설정
 
-1. `supabase-config.js` 파일을 엽니다
-2. Supabase 프로젝트의 URL과 Anon Key를 입력합니다:
+1. `config.example.js` 파일을 복사하여 `config.js` 파일을 생성합니다:
+   ```bash
+   cp config.example.js config.js
+   ```
+
+2. `config.js` 파일을 열어 Supabase 프로젝트의 URL과 Anon Key를 입력합니다:
 
 ```javascript
-const SUPABASE_URL = 'https://your-project.supabase.co';
-const SUPABASE_ANON_KEY = 'your-anon-key';
+window.SUPABASE_CONFIG = {
+    url: 'https://your-project.supabase.co',
+    anonKey: 'your-anon-key'
+};
 ```
+
+⚠️ **보안 주의사항:**
+- `config.js` 파일은 `.gitignore`에 포함되어 있어 Git에 업로드되지 않습니다
+- 실제 키는 절대 Git에 커밋하지 마세요
+- 배포 시에는 환경 변수를 사용하세요 (자세한 내용은 `SECURITY.md` 참고)
 
 Supabase 프로젝트의 URL과 Anon Key는 다음 위치에서 찾을 수 있습니다:
 - Supabase 대시보드 → Settings → API
@@ -69,7 +80,11 @@ newcardgame/
 ├── index.html          # 메인 HTML 파일
 ├── style.css           # 스타일시트
 ├── script.js           # 게임 로직
-├── supabase-config.js  # Supabase 설정
+├── supabase-config.js  # Supabase 설정 로직
+├── config.js           # Supabase 키 설정 (Git에 업로드 안됨)
+├── config.example.js   # 설정 템플릿
+├── SECURITY.md         # 보안 가이드
+├── DEPLOY.md           # 배포 가이드
 └── README.md           # 프로젝트 설명
 ```
 
