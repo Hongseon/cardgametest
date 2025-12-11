@@ -25,15 +25,17 @@ Vercel에서 Supabase 키를 환경 변수로 설정하는 방법입니다.
 
    **변수 1:**
    - Name: `SUPABASE_URL`
-   - Value: `https://lyqeolfdnnpcfgrfsrvv.supabase.co`
+   - Value: `https://your-project-id.supabase.co` (실제 Supabase 프로젝트 URL로 변경)
    - Environment: `Production`, `Preview`, `Development` 모두 선택
    - **Save** 클릭
 
    **변수 2:**
    - Name: `SUPABASE_ANON_KEY`
-   - Value: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5cWVvbGZkbm5wY2ZncmZzcnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzNTA2NTYsImV4cCI6MjA4MDkyNjY1Nn0.8lDz3y01TlN3AKle9ZL1eIxaskjtoJkVQXgGpVOJyao`
+   - Value: `your-supabase-anon-key-here` (실제 Supabase Anon Key로 변경)
    - Environment: `Production`, `Preview`, `Development` 모두 선택
    - **Save** 클릭
+
+   ⚠️ **주의:** 실제 Supabase URL과 Anon Key는 Supabase 대시보드 → Settings → API에서 확인할 수 있습니다.
 
 ### 방법 2: Vercel CLI 사용
 
@@ -98,9 +100,9 @@ Vercel은 다음 순서로 빌드합니다:
 
 4. **로컬에서 테스트**
    ```bash
-   # 환경 변수 설정
-   export SUPABASE_URL="https://lyqeolfdnnpcfgrfsrvv.supabase.co"
-   export SUPABASE_ANON_KEY="your-key-here"
+   # 환경 변수 설정 (실제 값으로 변경하세요)
+   export SUPABASE_URL="https://your-project-id.supabase.co"
+   export SUPABASE_ANON_KEY="your-supabase-anon-key-here"
    
    # 빌드 실행
    npm run build
